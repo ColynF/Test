@@ -6,39 +6,27 @@
     <title>Document</title>
     <style>
         /*align*/
-        @media (max-width: 768px) {
-            .page {
-                width: 90%; /* Flexiblere Breite */
-                height: auto; /* Anpassbare Höhe */
-                margin: 20px; /* Mehr Rand */
-                padding: 20px; /* Angepasstes Padding */
-                box-shadow: 0 0 30px rgba(0, 0, 0, 0.2); /* Feinerer Schatten */
-            }
-        }
-
-        /* Boddy*/
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #b9dbf7;
             margin: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        /*Page*/
-        .page {
-            background-color: #ffffff;
-            box-shadow: 0 0 60px rgba(0, 0, 0, 0.3);
-            padding: 50px;
-            width: 350mm;
-            height: 495mm;
+            padding: 0;
         }
 
-        /*Top-Bar*/
+        /* Page Container */
+        .page {
+            background-color: #ffffff;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            margin: 20px auto; /* Zentrieren des Inhalts */
+            border-radius: 10px;
+            max-width: 1200px; /* Maximale Breite des Inhalts */
+        }
+
+        /* Top-Bar */
         .bar {
             background-color: #b9dbf7;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             color: #333;
             padding: 10px;
             position: fixed;
@@ -50,7 +38,8 @@
             justify-content: space-around;
             align-items: center;
         }
-        /*Button*/
+
+        /* Button */
         .BS {
             border-radius: 20px;
             background-color: #ffffff;
@@ -64,7 +53,7 @@
 
         .BS:hover {
             background-color: #b9dbf7;
-            color: white
+            color: white;
         }
 
         .BS:active {
@@ -72,15 +61,34 @@
             transform: translateY(2px);
         }
 
+        /* Content */
         .content {
             padding-top: 60px;
-            padding-left: 20px;
-            padding-right: 20px;
+            padding-bottom: 20px;
         }
 
         h1 {
             color: #333;
             margin-bottom: 20px;
+            text-align: center;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        /* Responsive für kleine Bildschirme */
+        @media (max-width: 768px) {
+            .page {
+                padding: 10px;
+            }
+            .BS {
+                padding: 8px 15px;
+            }
         }
     </style>
 </head>
@@ -94,7 +102,9 @@
 
     <div class="content">
         <div class="page">
-            <h1>Main Content</h1>
+            <h1>Menu</h1>
+            <br>
+            <h2></h2>
         </div>
     </div>
 </body>
