@@ -5,63 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .BS {
-            border-radius: 8px;
-            background-color: black;
-            border: none;
-            color: white;
-            padding: 15px 32px;
-            text-align: center;
-            text-decoration: none;
-            display: inline-block;
-            font-size: 16px;
-            margin: 4px 2px;
-            cursor: pointer;
-            transition-duration: 0.4s;
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #ffffff;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
-        .BS:hover {
-            background-color: #555;
+
+        .page {
+            background-color: #fff;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.3);
+            padding: 50px;
+            width: 350mm;
+            height: 495mm;
         }
-        .BS:active {
-            background-color: #333;
-            transform: translateY(2px);
-        }
+
         .bar {
-            background-color: #333;
-            color: #fff;
+            background-color: #727272;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            color: #333;
             padding: 10px;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
         }
-        .bar p {
-            margin: 0;
+            /*CSS Button*/
+        .BS {
+            border-radius: 20px;
+            background-color: #353434;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 20px 100px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background-color 0.3s ease-out, transform 0.2s;
         }
+
+        .BS:hover {
+            background-color: #686666;
+        }
+
+        .BS:active {
+            background-color: #8d8b8b;
+            transform: translateY(2px);
+        }
+
         .content {
-            padding-top: 50px; /* Platz für den fixierten Balken */
+            padding-top: 60px;
             padding-left: 20px;
+            padding-right: 20px;
         }
-        body {
-         background: linear-gradient(to bottom, #3498db, #ffffff, #3498db);
-        background-size: 100% 100%;
-        background-attachment: fixed;
-        animation: gradient-animation 10s linear infinite;
-}
 
-@keyframes gradient-animation {
-    0% {
-        background-position: 0% 0%;
-    }
-    100% {
-        background-position: 100% 100%;
-    }
-}
-
-
-
-
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
@@ -73,7 +80,9 @@
     </div>
 
     <div class="content">
-        <h1>Main Content</h1>
+        <div class="page">
+            <h1>Main Content</h1>
+        </div>
     </div>
 </body>
 </html>
