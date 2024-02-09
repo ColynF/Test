@@ -8,14 +8,19 @@
         /*align*/
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #fcb77f;
+            background-color: #fcc57e;
             margin: 0;
             padding: 0;
+            /* Hintergrundbild */
+            background-image: url('background_image.jpg'); /* Pfad zum Bild anpassen */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
         /* Page Container */
         .page {
-            background-color: #ffffff;
+            background-color: rgba(121, 180, 243, 0.8); /* Hintergrundfarbe des Seiteninhalts mit Transparenz */
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
             padding: 20px;
             margin: 20px auto; /* Zentrieren des Inhalts */
@@ -25,7 +30,7 @@
 
         /* Top-Bar */
         .bar {
-            background-color: #fcb77f;
+            background-color: #fcc57e;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             color: #333;
             padding: 10px;
@@ -52,12 +57,12 @@
         }
 
         .BS:hover {
-            background-color: #f7c8a3;
+            background-color: #8b8b8b;
             color: white;
         }
 
         .BS:active {
-            background-color: #ff953f;
+            background-color: #4f504f;
             transform: translateY(2px);
         }
 
@@ -95,23 +100,19 @@
 <body>
     <div class="bar">
         <a href= "Zürich.html" class="BS">Zürich</a>
-        <a href="Main_Content.html" class="BS">Menu</a>
+        <a href= "Aufstrich_boden.html" class="BS">Erklährung für dumme ereignisse</a>
         <a href= "Auto.html" class="BS">Auto</a>
-        <a href= "Games.html" class="BS">Games</a>
+        <a href="Main_Content.html" class="BS">Menu</a>
     </div>
 
     <div class="content">
         <div class="page">
-            <h1>Wiso landet ein Brot mit aufstrich immer auf der verkehrten Seite?</h1>
-            <br>
-            <img src="aufstrich_Boden.png" alt="Beschreibung des Bildes"> <br>
-            <h1>Allgemeines<h1>
-            <h2>Das Phänomen, dass ein bestrichenes Brot oft auf der belegten Seite landet, lässt sich durch die Kombination von Rotationsdynamik und der durchschnittlichen Höhe eines Esstisches erklären. Die Höhe ermöglicht es dem Brot, während des Fallens eine halbe Drehung zu machen, nicht genug für eine volle Drehung, was bedeutet, dass es häufig auf der bestrichenen Seite landet. Zusätzlich macht der Belag die Seite schwerer, was die Chancen erhöht, dass sie unten landet. Dieses alltägliche Missgeschick spiegelt nicht nur physikalische Gesetzmäßigkeiten wider, sondern wird auch oft mit Humor im Sinne des Murphys Gesetzes betrachtet: Was schiefgehen kann, wird auch schiefgehen.</h2>
-            
-            <br>
-            <h1>Was wenn beide Seiten belegt sind?</h1> <br>
-            <img src="Brot_beidseitig.png" alt="Beschreibung des Bildes"> <br>
-            <h2>Wenn ein beidseitig belegtes Brot auf den Boden fällt, gibt es keine eindeutige Vorhersage, auf welcher Seite es landen wird. Die Interaktion von Schwerkraft und Trägheit kann zu unvorhersehbaren Drehbewegungen führen, da keine Seite eine dominante Schwere aufweist. Letztendlich bleibt das Ergebnis oft dem Zufall überlassen. <br> Überraschenderweise landet das Brot auf der belegten Seite. :^)</h2>
+            <h1>Games</h1>
+            <img src="Games.png" alt="Beschreibung des Bildes"> <br>
+            <a href="Guess_the_Number.html" class="BS">Nummer raten</a>
+            <h2>In diesem Spiel muss man eine zahl erraten welche von einem zufalsgenerator generiert wurde.</h2> <br>
+            <a href="Snacke.html" class="BS">Snacke</a>
+            <h2>Dieses Spiel ist eine nachmachung des bekanten spieles Snacke von Nokia. es geht darum das man so viel essen nimmt bevor man die wand oder sich selbst berührt</h2>
         </div>
     </div>
 </body>
