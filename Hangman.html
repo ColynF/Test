@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galgenmännchen</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+#hangman {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+#word {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#letters {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.message {
+  font-size: 18px;
+  font-weight: bold;
+  color: #900;
+}
+</style>
+</head>
+<body>
+  <h1>Galgenmännchen</h1>
+  <div id="hangman">H_NGM_N</div>
+  <div id="word">_ _ _ _ _ _ _ _ _</div>
+  <div id="letters">Erratene Buchstaben: </div>
+  <p class="message"></p>
+  <button onclick="spielNeustarten()">Spiel neu starten</button>
+
+  <script>
+    let woerter = ['galgenmännchen', 'javascript', 'computer', 'programmierung', 'internet', 'tastatur', 'monitor', 'entwickler'];
+    let errateneBuchstaben = [];
+    let galgenmännchen = document.getElementById('hangman');
+    let wortAnzeige = document.getElementById('word');
+    let buchstabenAnzeige = document.getElementById('letters');
+    let nachricht = document.querySelector('.message');
+    let wort;
+
+    function spielStarten() {
+      wort = woerter[Math.floor(Math.random() * woerter.length)];
+      errateneBuchstaben = [];
+      wortAnzeigen();
+      buchstabenAnzeige.textContent = 'Erratene Buchstaben: ';
+      nachricht.textContent = '';
+    }
+
+    function wortAnzeigen() {
+      let angezeigtesWort = '';
+      for (let i = 0; i < wort.length; i++) {
+        if (errateneBuchstaben.includes(wort[i])) {
+          angezeigtesWort += wort[i] + ' ';
+        } else {
+          angezeigtesWort += '_ ';
+        }
+      }
+      wortAnzeige.textContent = angezeigtesWort;
+    }
+
+    function buchstabeRaten(buchstabe) {
+      if (!errateneBuchstaben.includes(buchstabe)) {
+        errateneBuchstaben.push(buchstabe);
+        wortAnzeigen();
+        buchstabenAnzeige.textContent += buchstabe + ', ';
+
+        if (!wort.split('').some(char => !errateneBuchstaben.includes(char))) {
+          nachricht.textContent = 'Herzlichen Glückwunsch! Sie haben das Wort erraten!';
+        }
+      } else {
+        nachricht.textContent = 'Sie haben diesen Buchstaben bereits geraten!';
+      }
+    }
+
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode >= 65 && event.keyCode <= 90) {
+        let buchstabe = event.key.toLowerCase();
+        if (!errateneBuchstaben.includes(buchstabe)) {
+          buchstabeRaten(buchstabe);
+        }
+      }
+    });
+
+    function spielNeustarten() {
+      spielStarten();
+    }
+
+    spielStarten();
+  </script>
+</body>
+</html>
